@@ -14,7 +14,7 @@ import constants as cs
 
 def open_pickled_df(file_path: str) -> pd.DataFrame:
     """Takes a path to a pickled dtaframe and opens it, returning the
-    dataframe """
+    dataframe"""
     with open(file_path, 'rb') as file:
         data = pickle.load(file)
         return data

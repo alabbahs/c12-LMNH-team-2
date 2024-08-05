@@ -47,7 +47,7 @@ def setup_subtle_logging(log_name, logging_level=logging.DEBUG):
     return logger
 
 def start_monitor() -> cProfile.Profile:
-
+    """"""
     profiler = cProfile.Profile()
     profiler.enable()
 
