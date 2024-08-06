@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import requests
+import pandas as pd
 from constants import Constants as c
 from pprint import pprint
 
@@ -13,7 +14,6 @@ class Extract:
 
         pass
 
-    # TODO write a function that gets information on a single plant
     def get_plant(self, plant_id: int) -> dict:
         """
         Given an integer as a plant id, return the dictionary associated with
@@ -25,7 +25,31 @@ class Extract:
             return response.json()
         pass
 
-    # TODO write a function that flattens composite plant information
+    def generate_plant_dataframe(self) -> None:
+        """
+        Generates a dataframe of the 51 plant id's in 
+        the LMNH
+        """
+
+        all_plant_data = []
+
+        for i in range(c.NUMBER_OF_PLANTS):
+            plant_data = self.get_plant(i)
+
+            if plant_data == None:
+                continue
+
+            if 'error' in plant_data.keys():
+                continue
+
+            try:
+                all_plant_data.append(
+                    self.flatten_plant_information(plant_data))
+            except Exception:
+                continue
+
+        all_plant_dataframe = pd.DataFrame(all_plant_data)
+        all_plant_dataframe.to_parquet(f"{c.PATH_TO_DATA}{c.DATA_FILENAME}")
 
     def flatten_plant_information(self, plant_info: dict) -> dict:
         """
@@ -36,6 +60,14 @@ class Extract:
 
         location_information = self.flatten_location_information(plant_info)
         botanist_information = self.flatten_botanist_information(plant_info)
+        flattened_plant_information = plant_info.copy()
+        del flattened_plant_information['botanist']
+        del flattened_plant_information['origin_location']
+        del flattened_plant_information['images']
+        flattened_plant_information.update(location_information)
+        flattened_plant_information.update(botanist_information)
+
+        return flattened_plant_information
 
     def flatten_botanist_information(self, plant_info: dict) -> dict:
         """
@@ -87,4 +119,4 @@ class Extract:
 
 if __name__ == "__main__":
     plant_api = Extract(c.LMNH_API_ENDPOINT)
-    pprint(plant_api.get_plant(3))
+    plant_api.generate_plant_dataframe()

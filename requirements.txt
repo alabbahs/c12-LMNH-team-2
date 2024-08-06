@@ -1,0 +1,6 @@
+flask
+requests
+pytest
+pandas
+pyarrow
+fastparquet
