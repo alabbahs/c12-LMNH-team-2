@@ -63,7 +63,10 @@ class Extract:
         flattened_plant_information = plant_info.copy()
         del flattened_plant_information['botanist']
         del flattened_plant_information['origin_location']
-        del flattened_plant_information['images']
+
+        if 'images' in plant_info.keys():
+            del flattened_plant_information['images']
+
         flattened_plant_information.update(location_information)
         flattened_plant_information.update(botanist_information)
 
@@ -113,8 +116,6 @@ class Extract:
                 "origin_location_city_name": city_name,
                 "origin_location_country_code": country_code,
                 "origin_location_region": region}
-
-    # TODO write a function that collates all the plant info into a dataframe
 
 
 if __name__ == "__main__":
