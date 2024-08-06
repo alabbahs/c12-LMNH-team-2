@@ -44,7 +44,6 @@ class DataProcessor:
         logger.info("Converting byte string lists to normal strings...")
         df["scientific_name"] = df["scientific_name"].apply(lambda x: x.decode('utf-8') if isinstance(x, bytes) else x)
 
-
         logger.info("Data cleaned successfully.")
         return df
     
@@ -120,8 +119,12 @@ def main():
     df = DataProcessor.clean_data(df)
     logger.info("---> Validating data..")
     df = Validator.validate_or_nullify(df, 'botanist_email', Validator.is_valid_email)
+    logger.info("---> Saving Parquet..")
+    DataProcessor.save_parquet(df, CLEAN_DATA)
 
+    logger.info("---> Saving Parquet..")
     cg.stop_monitor(SCRIPT_NAME, profiler, performance_logger)
+    logger.info("---> Parequet saved as %s..", (SCRIPT_NAME))
 
     print(df)
 
