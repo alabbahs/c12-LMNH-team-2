@@ -40,7 +40,7 @@ CREATE TABLE beta.plant (
 
 CREATE TABLE beta.reading (
     reading_id BIGINT IDENTITY(1,1) PRIMARY KEY,
-    last_watered DATE,
+    last_watered DATETIME,
     soil_moisture FLOAT,
     temperature FLOAT,
     recording_taken DATETIME,
