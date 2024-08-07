@@ -87,9 +87,8 @@ class Validator:
         if it cannot be a valid email.
         """
         logger.info("Validating emails..")
-        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-
-        if re.match(pattern, email):
+        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$'
+        if re.match(pattern, email) and not re.search(r'\.\.', email):
             return True
         return False
     
