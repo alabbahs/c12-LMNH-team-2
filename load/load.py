@@ -73,6 +73,9 @@ class DataLoader:
                 INSERT INTO beta.reading (last_watered, soil_moisture, temperature, plant_id, recording_taken)
                 VALUES (?, ?, ?, ?, ?)
                 """
+                logger.debug("Inserting data: last_watered=%s, soil_moisture=%s, temperature=%s, plant_id=%s, recording_taken=%s",
+                    row['last_watered'], row['soil_moisture'], row['temperature'], 
+                    row['plant_id'], row['recording_taken'])
                 cursor.execute(query, (
                     row['last_watered'],
                     row['soil_moisture'],
