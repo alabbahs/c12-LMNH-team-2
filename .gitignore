@@ -3,3 +3,4 @@
 *.loc
 *.tfvars
 *.parquet
+*.venv
