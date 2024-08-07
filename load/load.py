@@ -32,7 +32,7 @@ class DataLoader:
     def connect_to_db(db_host: str = DB_HOST, db_port: str = DB_PORT,
                       db_user: str = DB_USER, db_password: str = DB_PASSWORD,
                       db_name: str = DB_NAME):
-        """Connects to the Microsoft SQL Server database using credentials from PrivateConstants"""
+        """Connects to the Microsoft SQL Server database"""
 
         logger.info("Attempting to connectng using the following credentials:")
         logger.info("To Host: `%s`", db_host)
@@ -70,11 +70,12 @@ class DataLoader:
         try:
             for _, row in df.iterrows():
                 query = """
-                INSERT INTO beta.reading (last_watered, temperature, plant_id, recording_taken)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO beta.reading (last_watered, soil_moisture, temperature, plant_id, recording_taken)
+                VALUES (?, ?, ?, ?, ?)
                 """
                 cursor.execute(query, (
                     row['last_watered'],
+                    row['soil_moisture'],
                     row['temperature'],
                     row['plant_id'],
                     row['recording_taken']
