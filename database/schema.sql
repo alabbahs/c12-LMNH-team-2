@@ -89,7 +89,7 @@ INSERT INTO beta.region (name) VALUES
     ('America/Mexico_City'), -- ID: 25
     ('Europe/Rome'),         -- ID: 26
     ('Africa/Blantyre'),     -- ID: 27
-    ('America/Mexico_City'); -- ID: 28
+    ('America/Mexico_City'), -- ID: 28
     ('America/El_Salvador'); -- ID: 29
 GO
 
@@ -137,7 +137,7 @@ INSERT INTO beta.plant (plant_id, name, scientific_name, origin_lat, origin_lon,
     (40, 'Amaryllis', 'Hippeastrum (group)', '44.92801', '4.8951', 'Valence', 'FR', 2, 11),
     (41, 'Caladium Bicolor', 'Caladium bicolor', '22.4711', '88.1453', 'Pujali', 'IN', 1, 4),
     (42, 'Chlorophytum Comosum', 'Chlorophytum comosum ''Vittatum''', '41.57439', '24.71204', 'Smolyan', 'BG', 1, 15),
-    (43, "loan plant", NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+    (43, 'loan plant', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
     (44, 'Araucaria Heterophylla', 'Araucaria heterophylla', '20.22816', '-103.5687', 'Zacoalco de Torres', 'MX', 3, 28),
     (45, 'Begonia', 'Begonia ''Art Hodes''', '33.95015', '-118.03917', 'South Whittier', 'US', 3, 2),
     (46, 'Medinilla Magnifica', 'Medinilla magnifica', '-13.7804', '34.4587', 'Salima', 'MW', 2, 27),
