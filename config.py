@@ -7,6 +7,22 @@ from constants import Constants as ct
 
 LOGS_DIR = ct.PATH_TO_LOGS
 
+def obscure(secret: str) -> str:
+    """
+    Replaces all but the first and last 3 chars in a string
+    with asterisks in order to keep it partially private.
+    If the length is less than 6, only keeps the first and last chars and obscures the rest.
+    If the length is 3 or less, replaces all chars with asterisks.
+    """
+    length = len(secret)
+    
+    if length <= 3:
+        return '*' * length
+    elif length <= 6:
+        return secret[0] + '*' * (length - 2) + secret[-1]
+    else:
+        return secret[:3] + '*' * (length - 6) + secret[-3:]
+
 def setup_logging(log_name: str, logging_level=logging.DEBUG,
                   logs_dir=LOGS_DIR):
     """setup logging with two logs, one normal, one for errors,
