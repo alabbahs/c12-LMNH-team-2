@@ -10,7 +10,7 @@ class dashboard:
     def fetch_data(self) -> pd.DataFrame:
         return pd.read_parquet("test_data.parquet")
 
-    def temp_graph(self, plant: pd.DataFrame):
+    def temp_graph(self, plant: pd.DataFrame) -> alt.Chart:
         temp_stats = plant[["recording_taken", "temperature"]]
 
         min_temperature = temp_stats["temperature"].min(
@@ -38,7 +38,7 @@ class dashboard:
 
         return area_chart + points
 
-    def moisture_graph(self, plant: pd.DataFrame):
+    def moisture_graph(self, plant: pd.DataFrame) -> alt.Chart:
 
         moisture_stats = plant[["recording_taken", "soil_moisture"]]
 
@@ -68,9 +68,9 @@ class dashboard:
 
     def generate_dashboard(self, data: pd.DataFrame) -> None:
         st.set_page_config(layout="wide")
-        st.title("Liverpool Natural History Museum Plant Heath Monitor")
+        st.title("Liverpool Natural History Museum Plant Health Monitor")
         st.write(
-            "Welcome to the plant heath monitor!, to start please choose a plant to monitor")
+            "Welcome to the plant health monitor!, to start please choose a plant to monitor")
         id_selected = st.selectbox(
             "Select a Plant ID", data["plant_id"])
 
@@ -82,7 +82,7 @@ class dashboard:
                 st.altair_chart(self.moisture_graph(plant))
             with col2:
                 st.altair_chart(self.temp_graph(plant))
-            with st.expander("Botantist Details"):
+            with st.expander("Botanist Details"):
                 st.write(f"Name:{
                          next(iter(set(plant["botanist_name"])))}")
                 st.write(f"Phone Number:{
