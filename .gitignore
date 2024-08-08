@@ -3,3 +3,5 @@
 *.loc
 *.tfvars
 *.parquet
+.pytest_cache
+__pycache__/
