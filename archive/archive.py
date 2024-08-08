@@ -5,12 +5,11 @@ import pandas as pd
 import boto3
 from dotenv import load_dotenv
 import logging
-import cProfile
-import numpy as np
 from datetime import datetime, timedelta
 from io import BytesIO
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath\
+                (os.path.join(os.path.dirname(__file__), '..')))
 import config as cg
 from constants import Constants as ct
 
@@ -31,9 +30,9 @@ DB_USER=os.getenv('DB_USER')
 DB_PASSWORD=os.getenv('DB_PASSWORD')
 DB_NAME=os.getenv('DB_NAME')
 
-AWS_ACCESS_KEY=os.getenv(AWS_ACCESS_KEY)
-AWS_SECRET_KEY=os.getenv(AWS_SECRET_KEY)
-AWS_REGION = os.getenv(AWS_REGION)
+AWS_ACCESS_KEY=os.getenv('AWS_ACCESS_KEY')
+AWS_SECRET_KEY=os.getenv('AWS_SECRET_KEY')
+AWS_REGION=os.getenv('AWS_REGION')
 
 logger = cg.setup_logging(SCRIPT_NAME, LOGGING_LEVEL)
 
@@ -63,7 +62,11 @@ class DataTrimmer:
         logger.info("Database name: `%s`", db_name)
         
         try:
-            connection_string = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={db_host},{db_port};DATABASE={db_name};UID={db_user};PWD={db_password}"
+            connection_string = f"DRIVER={{ODBC Driver 17 for SQL Server}};\
+                SERVER={db_host},{db_port}\
+                    DATABASE={db_name};\
+                        UID={db_user};\
+                            PWD={db_password}"
             connection = pyodbc.connect(connection_string)
             logger.info("Database connection established successfully.")
             return connection
@@ -95,23 +98,24 @@ class DataTrimmer:
         """
         Gets the rows with times/dates beyond the cutoff limit
         from the live database.
-        
+
         Returns them as a pandas DataFrame to preserve them, but deletes
         them from the  actual database if `delete` is True.
         """
 
         cursor = connection.cursor()
 
-        logger.info(f"Only retaining data from {cut_off_time} to {datetime.now()}")
+        logger.info(f"Only retaining data from {cut_off_time}"
+                    f" to {datetime.now()}")
 
         select_query = """
         SELECT *
-        FROM data_table
-        WHERE date_column < ? OR date_column > ?;
+        FROM plants.beta.reading
+        WHERE recording_taken < ? OR recording_taken > ?;
         """
         delete_query = """
-        DELETE FROM data_table
-        WHERE date_column < ? OR date_column > ?;
+        DELETE FROM plants.beta.reading
+        WHERE recording_taken < ? OR recording_taken > ?;
         """
         
         cursor.execute(select_query, cut_off_time, datetime.now())
@@ -154,9 +158,9 @@ class DataArchiver:
 
         try:
             client = boto3.client('s3',
-                                  aws_access_key_id=access_key,
-                                  aws_secret_access_key=secret_key,
-                                  region_name=region)
+                                  aws_access_key_id=AWS_ACCESS_KEY,
+                                  aws_secret_access_key=AWS_SECRET_KEY,
+                                  region_name=AWS_REGION)
             logger.info("Retrieved client successfully.")
             logger.debug(f"Client: {client}")
 
@@ -197,20 +201,34 @@ class DataArchiver:
             return pd.DataFrame()
 
     @staticmethod
-    def merge_and_save(client: boto3.client,
-                       existing_data: pd.DataFrame,
-                       new_data: pd.DataFrame,
-                       bucket: str = S3_BUCKET,
-                       logger: logging.Logger = logger) -> pd.DataFrame:
+    def merge_data(existing_data: pd.DataFrame, 
+                new_data: pd.DataFrame, 
+                logger: logging.Logger = logger) -> pd.DataFrame:
         """
-        Merge existing data with new data and save to the S3 bucket.
+        Merge existing data with new data while preventing duplicates.
         """
+        
+        logger.info("Merging existing data (if any) with new data...")
 
-        logger.info("Merging existing data (if any) with new data")
-        merged_df = pd.merge(existing_data, new_data, on='key', how='inner')
+        if existing_data.empty:
+            merged_df = new_data
+            logger.info("Existing data is empty, returning new data as merged result.")
+        else:
+            merged_df = pd.concat([existing_data, new_data]).drop_duplicates(subset='key')
+        
+        return merged_df
+        
+    @staticmethod
+    def save_data_to_s3(client: boto3.client, 
+                        data: pd.DataFrame, 
+                        bucket: str = S3_BUCKET, 
+                        logger: logging.Logger = logger) -> None:
+        """
+        Save data to the S3 bucket.
+        """
         
         buffer = BytesIO()
-        merged_df.to_parquet(buffer, index=False)
+        data.to_parquet(buffer, index=False)
         buffer.seek(0)
         
         try:
@@ -218,8 +236,6 @@ class DataArchiver:
             logger.info("Merged data successfully saved to S3.")
         except Exception as e:
             logger.error(f"Error saving merged data to S3: {e}")
-
-        return merged_df
     
 def main():
 
@@ -243,15 +259,16 @@ def main():
     # Merge the existing archive with the data just taken from the database
     logger.info("---> Fetching any previously archived data..")
     previously_archived = DataArchiver.get_archived_data(client)
-    logger.info("---> Saving previously-archived, and to-be archived data..")
-    joined_df = DataArchiver.merge_and_save(client,
-                                            previously_archived,
-                                            to_be_archived)
+    logger.info("---> Merging archival data..")
+    joined_df = DataArchiver.merge_data(previously_archived, to_be_archived)
+    logger.info("---> Saving updated archive to bucket..")
+    DataArchiver.save_data_to_s3(client, joined_df)
 
     # Winds down, stores performance log.
     logger.info("---> Operation completed. Stopping performance monitor.")
     cg.stop_monitor(SCRIPT_NAME, profiler, performance_logger)
-    logger.info("---> Data inserted and process completed for %s.", SCRIPT_NAME)
+    logger.info("---> Data inserted and process"
+                "completed for %s.", SCRIPT_NAME)
 
 
 if __name__ == "__main__":
