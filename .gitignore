@@ -5,3 +5,4 @@
 *.parquet
 *.venv
 logs/*
+__pycache__/
