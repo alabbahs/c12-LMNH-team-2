@@ -4,11 +4,11 @@ import pyodbc
 import pandas as pd
 import boto3
 from dotenv import load_dotenv
-
 import logging
 import cProfile
 import numpy as np
 from datetime import datetime
+from io import BytesIO
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import config as cg
@@ -18,6 +18,8 @@ SCRIPT_NAME = (os.path.basename(__file__)).split(".")[0]
 LOGGING_LEVEL = logging.DEBUG
 
 RETENTION_TIME = ct.RETENTION_TIME
+ARCHIVED_DATA = ct.ARCHIVED_DATA
+BUCKET = ct.S3_BUCKET
 
 CLEAN_DATA = f"{ct.PATH_TO_DATA}/{ct.CLEANED_DATA_FILENAME}"
 
@@ -127,10 +129,14 @@ class DataArchiver:
 
     @staticmethod
     def get_client(access_key: str,
-                secret_key: str,
-                region: str,
-                logger: logging.Logger=logger)\
-                                               -> boto3.client:
+                  secret_key: str,
+                  region: str,
+                  logger: logging.Logger=logger)\
+                                                -> boto3.client:
+        
+        """
+        Gets the boto3 client so that s3 bucket can be accessed
+        """
         logger.info("Fetching boto3 client...")
 
         try:
@@ -147,6 +153,39 @@ class DataArchiver:
             logger.error(f"{e}")
 
         return client
+
+    @staticmethod
+    def get_archived_data(client: boto3.client,
+                          archive: string=ARCHIVED_DATA,
+                          bucket: str=BUCKET,
+                          logger: logging.Logger=logger)\
+                                                        -> pd.DataFrame:
+    """
+    Get archived data from an s3 bucket, returns as pandas dataframe.
+    """
+    logger.info("Getting archived data from bucket...")
+
+    try:
+        response = client.list_objects_v2(Bucket=bucket, Prefix=archive)
+
+        if 'Contents' not in response:
+            logger.error("No objects found in the bucket with the specified archive prefix.")
+            return pd.DataFrame()  # Return an empty DataFrame if no objects are found
+
+        # Initialize an empty DataFrame
+        df_list = []
+
+        for obj in response['Contents']:
+            obj_key = obj['Key']
+            logger.info(f"Downloading object {obj_key} from bucket {bucket}...")
+            
+            obj_response = client.get_object(Bucket=bucket, Key=obj_key)
+            
+            data = obj_response['Body'].read()
+            temp_df = pd.read_csv(BytesIO(data))
+            df_list.append(temp_df)
+
+
 
 
 if __name__ == "__main__":

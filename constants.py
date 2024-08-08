@@ -12,6 +12,12 @@ class Constants:
 
     # No. Hours live data is stored for
     RETENTION_TIME = 24
+    #Name of S3 Bucket
+    BUCKET = "archived_data.parquet"
+    # Parquet name of historic data on s3
+    ARCHIVED_DATA = "archived_data.parquet"
+
+
 
     def __setattr__(self, name: str, value: Any) -> None:
         raise AttributeError(f"Can't Reassign Constant {name}")
