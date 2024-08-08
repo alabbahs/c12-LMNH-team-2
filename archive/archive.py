@@ -158,9 +158,9 @@ class DataArchiver:
 
         try:
             client = boto3.client('s3',
-                                  aws_access_key_id=AWS_ACCESS_KEY,
-                                  aws_secret_access_key=AWS_SECRET_KEY,
-                                  region_name=AWS_REGION)
+                                  access_key,
+                                  secret_key,
+                                  region)
             logger.info("Retrieved client successfully.")
             logger.debug(f"Client: {client}")
 
