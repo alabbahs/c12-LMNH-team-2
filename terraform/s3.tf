@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"  # Specify your desired region
+  region = "eu-west-2"  # Specify your desired region
 }
 
 resource "aws_s3_bucket" "historical_data_bucket" {
