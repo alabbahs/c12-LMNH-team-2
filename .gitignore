@@ -3,5 +3,6 @@
 *.loc
 *.tfvars
 *.parquet
-.pytest_cache
-__pycache__/
+*.venv
+logs/*
+__pychache__/
