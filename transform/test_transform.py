@@ -39,6 +39,15 @@ def invalid_emails():
         "username@domain.c"
     ]
 
+@pytest.fixture
+def non_string_emails():
+    """Fixture to provide non-string emails"""
+    return [
+        12345,
+        None,
+        ["test@example.com"]
+    ]
+
 def test_clean_data(sample_dataframe):
     """Test the clean_data method"""
 
@@ -53,10 +62,14 @@ def test_clean_data(sample_dataframe):
     assert cleaned_df['scientific_name'].iloc[0] == "Quercus robur"
     assert cleaned_df['scientific_name'].iloc[1] == "Fagus sylvatica"
 
-def test_is_valid_email(valid_emails, invalid_emails):
+
+def test_is_valid_email(valid_emails, invalid_emails, non_string_emails):
     """Test the is_valid_email method"""
     for email in valid_emails:
         assert Validator.is_valid_email(email) == True, f"Expected True for valid email: {email}"
 
     for email in invalid_emails:
         assert Validator.is_valid_email(email) == False, f"Expected False for invalid email: {email}"
+    
+    for email in non_string_emails:
+        assert Validator.is_valid_email(email) == False, f"Expected False for non-string email: {email}"
