@@ -193,7 +193,8 @@ class DataArchiver:
             return df
 
         except client.exceptions.NoSuchKey:
-            logger.error(f"File {archive} not found in bucket {bucket}.")
+            logger.warning(f"File {archive} not found in bucket {bucket}.")
+            logger.warning("(! ignore if bucket is supposed to be empty !)")
             return pd.DataFrame() 
 
         except Exception as e:
@@ -214,14 +215,17 @@ class DataArchiver:
             merged_df = new_data
             logger.info("Existing data is empty, returning new data as merged result.")
         else:
-            merged_df = pd.concat([existing_data, new_data]).drop_duplicates(subset='key')
+            check_for_duplicates_in = ['plant_id', 'recording_taken']
+            merged_df = pd.concat([existing_data, new_data])\
+                .drop_duplicates(subset=check_for_duplicates_in)
         
         return merged_df
         
     @staticmethod
     def save_data_to_s3(client: boto3.client, 
-                        data: pd.DataFrame, 
-                        bucket: str = S3_BUCKET, 
+                        data: pd.DataFrame,
+                        file_name: str = ARCHIVED_DATA,
+                        bucket: str = S3_BUCKET,
                         logger: logging.Logger = logger) -> None:
         """
         Save data to the S3 bucket.
@@ -232,7 +236,7 @@ class DataArchiver:
         buffer.seek(0)
         
         try:
-            client.put_object(Bucket=bucket, Key='merged_data.parquet', Body=buffer)
+            client.put_object(Bucket=bucket, Key=file_name, Body=buffer)
             logger.info("Merged data successfully saved to S3.")
         except Exception as e:
             logger.error(f"Error saving merged data to S3: {e}")
