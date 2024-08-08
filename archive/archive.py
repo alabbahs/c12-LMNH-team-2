@@ -165,25 +165,23 @@ class DataArchiver:
     """
     logger.info("Getting archived data from bucket...")
 
-    try:
-        response = client.list_objects_v2(Bucket=bucket, Prefix=archive)
-
-        if 'Contents' not in response:
-            logger.error("No objects found in the bucket with the specified archive prefix.")
-            return pd.DataFrame()  # Return an empty DataFrame if no objects are found
-
-        # Initialize an empty DataFrame
-        df_list = []
-
-        for obj in response['Contents']:
-            obj_key = obj['Key']
-            logger.info(f"Downloading object {obj_key} from bucket {bucket}...")
-            
-            obj_response = client.get_object(Bucket=bucket, Key=obj_key)
+        try:
+            obj_response = client.get_object(Bucket=bucket, Key=archive)
             
             data = obj_response['Body'].read()
-            temp_df = pd.read_csv(BytesIO(data))
-            df_list.append(temp_df)
+            df = pd.read_parquet(BytesIO(data))
+
+            logger.info(f"Successfully retrieved data from {archive}")
+
+            return df
+
+        except client.exceptions.NoSuchKey:
+            logger.error(f"File {archive} not found in bucket {bucket}.")
+            return pd.DataFrame() 
+
+        except Exception as e:
+            logger.error(f"Error retrieving data from bucket: {e}")
+            return pd.DataFrame()
 
 
 
