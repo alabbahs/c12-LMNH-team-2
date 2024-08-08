@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 import logging
 import cProfile
 import numpy as np
-from datetime import datetime
+from datetime import datetime, timedelta
 from io import BytesIO
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -20,7 +20,7 @@ LOGGING_LEVEL = logging.DEBUG
 RETENTION_TIME = ct.RETENTION_TIME
 ARCHIVED_DATA = ct.ARCHIVED_DATA
 S3_BUCKET = ct.S3_BUCKET
-DELETE_OLD = True
+DELETE_OLD = False # Set to False when debugging
 
 CLEAN_DATA = f"{ct.PATH_TO_DATA}/{ct.CLEANED_DATA_FILENAME}"
 
@@ -40,7 +40,6 @@ logger = cg.setup_logging(SCRIPT_NAME, LOGGING_LEVEL)
 class DataTrimmer:
     """
     Finds database data that is outside of a retention window (e.g. 24hrs).
-
     Removes it from a database. Returns removed data as a dataframe.
     """
 
@@ -50,17 +49,17 @@ class DataTrimmer:
                       db_user: str = DB_USER,
                       db_password: str = DB_PASSWORD,
                       db_name: str = DB_NAME,
-                      logger: logging.Logger=logger)\
-                                                     -> pyodbc.Connection:
+                      logger: logging.Logger = logger) -> pyodbc.Connection:
         """
-        Connects to the Microsoft SQL Server database
+        Connects to the Microsoft SQL Server database.
         """
 
-        logger.info("Attempting to connectng using the following credentials:")
+        logger.info("Attempting to connect using the\
+                    following credentials:")
         logger.info("To Host: `%s`", db_host)
         logger.info("On Port: `%s`", db_port)
         logger.info("As user: `%s`", db_user)
-        logger.info("With password: `%s`", cg.obscure(db_password))
+        logger.info("With password: `%s`", db_password)
         logger.info("Database name: `%s`", db_name)
         
         try:
@@ -71,49 +70,50 @@ class DataTrimmer:
         except Exception as e:
             logger.error("Failed to connect to the database: %s", e)
             raise
-    
 
-    @static_method
-    def get_cutoff_time(retention_time: int=RETENTION_TIME,
-                        logger: logging.Logger=logger)\
-                                                       -> datetime:
+    @staticmethod
+    def get_cutoff_time(retention_time: int = RETENTION_TIME,
+                        logger: logging.Logger = logger) -> datetime:
         """
         Gets the last datetime that is within the data retention window.
         
         If the retention time is 1, and the time is 1500, it will return
         1400. Times before 1400 are outside the intended retention window.
         """
-        logger.info(f"Retention time set to {retention_time}Hrs")
+
+        logger.info(f"Retention time set to {retention_time} hours")
         current_time = datetime.now()
         cutoff_time = current_time - timedelta(hours=retention_time)
         logger.info(f"Setting cutoff threshold for {cutoff_time}.")
         return cutoff_time
 
-    @static_method
+    @staticmethod
     def extract_and_delete(cut_off_time: datetime,
-                           connection: any,
-                           delete: bool=DELETE_OLD,
-                           logger: logging.Logger=logger)\
-                                                            -> pd.DataFrame:
+                           connection: pyodbc.Connection,
+                           delete: bool = DELETE_OLD,
+                           logger: logging.Logger = logger) -> pd.DataFrame:
         """
-        Gets the times/dates beyond the cutoff limit from the live database.
-
-        Returns them as a pandas to preserve them, but deletes them from the 
-        actual database.
-
-        Set `delete` to False if you don't want to delete old 
-        varibles during testing.
+        Gets the rows with times/dates beyond the cutoff limit
+        from the live database.
+        
+        Returns them as a pandas DataFrame to preserve them, but deletes
+        them from the  actual database if `delete` is True.
         """
 
         cursor = connection.cursor()
-        logger.info(f"Only retaining data from {cut_off_time}\
-                    -> {datetime.now()}")
+
+        logger.info(f"Only retaining data from {cut_off_time} to {datetime.now()}")
 
         select_query = """
         SELECT *
         FROM data_table
         WHERE date_column < ? OR date_column > ?;
         """
+        delete_query = """
+        DELETE FROM data_table
+        WHERE date_column < ? OR date_column > ?;
+        """
+        
         cursor.execute(select_query, cut_off_time, datetime.now())
         results = cursor.fetchall()
         columns = [column[0] for column in cursor.description]
@@ -122,17 +122,13 @@ class DataTrimmer:
         logger.info(f"Number of rows to delete: {len(df)}")
         
         if delete:
-            delete_query = """
-            DELETE FROM data_table
-            WHERE date_column < ? OR date_column > ?;
-            """
-            cursor.execute(delete_query, cut_off_time, datetime.datetime.now())
+            cursor.execute(delete_query, cut_off_time, datetime.now())
             connection.commit()
-            logger.info(f"Old data deleted.")
+            logger.info("Extracted data deleted from database.")
         else:
-            logger.info(f"Old data not deleted.") # See DELETE_OLD
+            logger.info("Extracted data not deleted from database.")
+       
         cursor.close()
-        
         return df
 
 class DataArchiver:
@@ -142,17 +138,19 @@ class DataArchiver:
     """
 
     @staticmethod
-    def get_client(access_key: str=AWS_ACCESS_KEY,
-                   secret_key: str=AWS_SECRET_KEY,
-                   region: str=AWS_REGION,
-                   logger: logging.Logger=logger) -> boto3.client:
+    def get_client(access_key: str = AWS_ACCESS_KEY,
+                   secret_key: str = AWS_SECRET_KEY,
+                   region: str = AWS_REGION,
+                   logger: logging.Logger = logger) -> boto3.client:
         """
         Gets the boto3 client so that s3 bucket can be accessed
         """
+
         logger.info("Fetching boto3 client...")
 
-        logger.info("AWS access key: `%s`", cg.obscure(access_key))
-        logger.info("AWS secret key: `%s`", cg.obscure(secret_key))
+        # Assume `cg.obscure` is a function to obscure sensitive info
+        # logger.info("AWS access key: `%s`", cg.obscure(access_key))
+        # logger.info("AWS secret key: `%s`", cg.obscure(secret_key))
 
         try:
             client = boto3.client('s3',
@@ -165,7 +163,7 @@ class DataArchiver:
         except Exception as e:
             logger.error("Failed to get client!")
             logger.error(f"{e}")
-            return None  # None if client creating fails
+            return None  # Return None if client creation fails
 
         return client
 
@@ -175,8 +173,9 @@ class DataArchiver:
                           bucket: str = S3_BUCKET,
                           logger: logging.Logger = logger) -> pd.DataFrame:
         """
-        Get archived data from an s3 bucket, returns as pandas dataframe.
+        Get archived data from an S3 bucket, returns as pandas DataFrame.
         """
+
         logger.info("Getting archived data from bucket...")
 
         try:
@@ -206,6 +205,7 @@ class DataArchiver:
         """
         Merge existing data with new data and save to the S3 bucket.
         """
+
         logger.info("Merging existing data (if any) with new data")
         merged_df = pd.merge(existing_data, new_data, on='key', how='inner')
         
