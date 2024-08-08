@@ -129,11 +129,9 @@ class DataArchiver:
 
     @staticmethod
     def get_client(access_key: str,
-                  secret_key: str,
-                  region: str,
-                  logger: logging.Logger=logger)\
-                                                -> boto3.client:
-        
+                   secret_key: str,
+                   region: str,
+                   logger: logging.Logger) -> boto3.client:
         """
         Gets the boto3 client so that s3 bucket can be accessed
         """
@@ -141,29 +139,28 @@ class DataArchiver:
 
         try:
             client = boto3.client('s3',
-                                aws_access_key_id=access_key,
-                                aws_secret_access_key=secret_key,
-                                region_name=region
-                                )
+                                  aws_access_key_id=access_key,
+                                  aws_secret_access_key=secret_key,
+                                  region_name=region)
             logger.info("Retrieved client successfully.")
             logger.debug(f"Client: {client}")
 
         except Exception as e:
             logger.error("Failed to get client!")
             logger.error(f"{e}")
+            return None  # None if client creating fails
 
         return client
 
     @staticmethod
     def get_archived_data(client: boto3.client,
-                          archive: string=ARCHIVED_DATA,
-                          bucket: str=BUCKET,
-                          logger: logging.Logger=logger)\
-                                                        -> pd.DataFrame:
-    """
-    Get archived data from an s3 bucket, returns as pandas dataframe.
-    """
-    logger.info("Getting archived data from bucket...")
+                          archive: str = ARCHIVED_DATA,
+                          bucket: str = BUCKET,
+                          logger: logging.Logger = None) -> pd.DataFrame:
+        """
+        Get archived data from an s3 bucket, returns as pandas dataframe.
+        """
+        logger.info("Getting archived data from bucket...")
 
         try:
             obj_response = client.get_object(Bucket=bucket, Key=archive)
@@ -182,6 +179,32 @@ class DataArchiver:
         except Exception as e:
             logger.error(f"Error retrieving data from bucket: {e}")
             return pd.DataFrame()
+
+    @staticmethod
+    def merge_and_save(client: boto3.client,
+                       existing_data: pd.DataFrame,
+                       new_data: pd.DataFrame,
+                       bucket: str = BUCKET,
+                       logger: logging.Logger = None) -> pd.DataFrame:
+        """
+        Merge existing data with new data and save to the S3 bucket.
+        """
+        logger.info("Merging existing data (if any) with new data")
+        merged_df = pd.merge(existing_data, new_data, on='key', how='inner')
+        
+        buffer = BytesIO()
+        merged_df.to_parquet(buffer, index=False)
+        buffer.seek(0)
+        
+        try:
+            client.put_object(Bucket=bucket, Key='merged_data.parquet', Body=buffer)
+            logger.info("Merged data successfully saved to S3.")
+        except Exception as e:
+            logger.error(f"Error saving merged data to S3: {e}")
+
+        return merged_df
+    
+    
 
 
 
