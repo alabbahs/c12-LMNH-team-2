@@ -19,7 +19,8 @@ LOGGING_LEVEL = logging.DEBUG
 
 RETENTION_TIME = ct.RETENTION_TIME
 ARCHIVED_DATA = ct.ARCHIVED_DATA
-BUCKET = ct.S3_BUCKET
+S3_BUCKET = ct.S3_BUCKET
+DELETE_OLD = True
 
 CLEAN_DATA = f"{ct.PATH_TO_DATA}/{ct.CLEANED_DATA_FILENAME}"
 
@@ -29,6 +30,10 @@ DB_PORT=os.getenv('DB_PORT')
 DB_USER=os.getenv('DB_USER')
 DB_PASSWORD=os.getenv('DB_PASSWORD')
 DB_NAME=os.getenv('DB_NAME')
+
+AWS_ACCESS_KEY=os.getenv(AWS_ACCESS_KEY)
+AWS_SECRET_KEY=os.getenv(AWS_SECRET_KEY)
+AWS_REGION = os.getenv(AWS_REGION)
 
 logger = cg.setup_logging(SCRIPT_NAME, LOGGING_LEVEL)
 
@@ -46,8 +51,10 @@ class DataTrimmer:
                       db_password: str = DB_PASSWORD,
                       db_name: str = DB_NAME,
                       logger: logging.Logger=logger)\
-                                                        -> pyodbc.Connection:
-        """Connects to the Microsoft SQL Server database"""
+                                                     -> pyodbc.Connection:
+        """
+        Connects to the Microsoft SQL Server database
+        """
 
         logger.info("Attempting to connectng using the following credentials:")
         logger.info("To Host: `%s`", db_host)
@@ -67,9 +74,9 @@ class DataTrimmer:
     
 
     @static_method
-    def get_cutoff_time(retention_time: int = RETENTION_TIME,
+    def get_cutoff_time(retention_time: int=RETENTION_TIME,
                         logger: logging.Logger=logger)\
-                                                            -> datetime:
+                                                       -> datetime:
         """
         Gets the last datetime that is within the data retention window.
         
@@ -85,6 +92,7 @@ class DataTrimmer:
     @static_method
     def extract_and_delete(cut_off_time: datetime,
                            connection: any,
+                           delete: bool=DELETE_OLD,
                            logger: logging.Logger=logger)\
                                                             -> pd.DataFrame:
         """
@@ -92,31 +100,37 @@ class DataTrimmer:
 
         Returns them as a pandas to preserve them, but deletes them from the 
         actual database.
+
+        Set `delete` to False if you don't want to delete old 
+        varibles during testing.
         """
 
         cursor = connection.cursor()
         logger.info(f"Only retaining data from {cut_off_time}\
-                    -> {datetime.datetime.now()}")
+                    -> {datetime.now()}")
 
         select_query = """
         SELECT *
         FROM data_table
         WHERE date_column < ? OR date_column > ?;
         """
-        cursor.execute(select_query, cut_off_time, datetime.datetime.now())
+        cursor.execute(select_query, cut_off_time, datetime.now())
         results = cursor.fetchall()
         columns = [column[0] for column in cursor.description]
         df = pd.DataFrame.from_records(results, columns=columns)
         
         logger.info(f"Number of rows to delete: {len(df)}")
         
-        delete_query = """
-        DELETE FROM data_table
-        WHERE date_column < ? OR date_column > ?;
-        """
-        cursor.execute(delete_query, cut_off_time, datetime.datetime.now())
-        connection.commit()
-        logger.info(f"Old data deleted")
+        if delete:
+            delete_query = """
+            DELETE FROM data_table
+            WHERE date_column < ? OR date_column > ?;
+            """
+            cursor.execute(delete_query, cut_off_time, datetime.datetime.now())
+            connection.commit()
+            logger.info(f"Old data deleted.")
+        else:
+            logger.info(f"Old data not deleted.") # See DELETE_OLD
         cursor.close()
         
         return df
@@ -128,14 +142,17 @@ class DataArchiver:
     """
 
     @staticmethod
-    def get_client(access_key: str,
-                   secret_key: str,
-                   region: str,
-                   logger: logging.Logger) -> boto3.client:
+    def get_client(access_key: str=AWS_ACCESS_KEY,
+                   secret_key: str=AWS_SECRET_KEY,
+                   region: str=AWS_REGION,
+                   logger: logging.Logger=logger) -> boto3.client:
         """
         Gets the boto3 client so that s3 bucket can be accessed
         """
         logger.info("Fetching boto3 client...")
+
+        logger.info("AWS access key: `%s`", cg.obscure(access_key))
+        logger.info("AWS secret key: `%s`", cg.obscure(secret_key))
 
         try:
             client = boto3.client('s3',
@@ -155,8 +172,8 @@ class DataArchiver:
     @staticmethod
     def get_archived_data(client: boto3.client,
                           archive: str = ARCHIVED_DATA,
-                          bucket: str = BUCKET,
-                          logger: logging.Logger = None) -> pd.DataFrame:
+                          bucket: str = S3_BUCKET,
+                          logger: logging.Logger = logger) -> pd.DataFrame:
         """
         Get archived data from an s3 bucket, returns as pandas dataframe.
         """
@@ -184,8 +201,8 @@ class DataArchiver:
     def merge_and_save(client: boto3.client,
                        existing_data: pd.DataFrame,
                        new_data: pd.DataFrame,
-                       bucket: str = BUCKET,
-                       logger: logging.Logger = None) -> pd.DataFrame:
+                       bucket: str = S3_BUCKET,
+                       logger: logging.Logger = logger) -> pd.DataFrame:
         """
         Merge existing data with new data and save to the S3 bucket.
         """
@@ -204,9 +221,37 @@ class DataArchiver:
 
         return merged_df
     
-    
+def main():
 
+    # Setup logging and performance tracking
+    performance_logger = cg.setup_subtle_logging(SCRIPT_NAME)
+    profiler = cg.start_monitor()
+    logger.info("---> Logging initiated.")
 
+    # Get connection
+    logger.info("---> Connecting to the database..")
+    connection = DataTrimmer.connect_to_db()
+    logger.info("---> Getting S3 Bucket client..")
+    client = DataArchiver.get_client()
+
+    # Extract old data that is no longer needed in live database
+    logger.info("---> Assessing which time-window to keep..")
+    cut_off_time = DataTrimmer.get_cutoff_time()
+    logger.info("---> Extracting old data from database..")
+    to_be_archived = DataTrimmer.extract_and_delete(cut_off_time, connection)
+
+    # Merge the existing archive with the data just taken from the database
+    logger.info("---> Fetching any previously archived data..")
+    previously_archived = DataArchiver.get_archived_data(client)
+    logger.info("---> Saving previously-archived, and to-be archived data..")
+    joined_df = DataArchiver.merge_and_save(client,
+                                            previously_archived,
+                                            to_be_archived)
+
+    # Winds down, stores performance log.
+    logger.info("---> Operation completed. Stopping performance monitor.")
+    cg.stop_monitor(SCRIPT_NAME, profiler, performance_logger)
+    logger.info("---> Data inserted and process completed for %s.", SCRIPT_NAME)
 
 
 if __name__ == "__main__":
