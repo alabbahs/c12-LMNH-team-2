@@ -1,616 +1,431 @@
-         15636 function calls (15185 primitive calls) in 1.007 seconds
+         19440 function calls (19245 primitive calls) in 1.130 seconds
 
    Ordered by: cumulative time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.000    0.000    0.616    0.616 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/load/load.py:66(insert_data_from_df)
-       38    0.580    0.015    0.580    0.015 {method 'execute' of 'pyodbc.Cursor' objects}
-        1    0.000    0.000    0.327    0.327 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/load/load.py:31(connect_to_db)
-        1    0.326    0.326    0.327    0.327 {built-in method pyodbc.connect}
-        1    0.000    0.000    0.064    0.064 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/load/load.py:54(read_parquet)
-        1    0.000    0.000    0.064    0.064 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/parquet.py:498(read_parquet)
-        1    0.001    0.001    0.050    0.050 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/parquet.py:239(read)
-        1    0.000    0.000    0.047    0.047 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:1776(read_table)
-     30/5    0.000    0.000    0.038    0.008 <frozen importlib._bootstrap>:1349(_find_and_load)
-     29/4    0.000    0.000    0.038    0.010 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
-     26/4    0.000    0.000    0.038    0.010 <frozen importlib._bootstrap>:911(_load_unlocked)
-     12/4    0.000    0.000    0.038    0.010 <frozen importlib._bootstrap_external>:989(exec_module)
-     70/8    0.000    0.000    0.037    0.005 <frozen importlib._bootstrap>:480(_call_with_frames_removed)
-     12/4    0.000    0.000    0.037    0.009 {built-in method builtins.exec}
-        1    0.009    0.009    0.034    0.034 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:1276(__init__)
-        1    0.000    0.000    0.025    0.025 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/dataset.py:1(<module>)
-     14/9    0.000    0.000    0.022    0.002 <frozen importlib._bootstrap_external>:1295(exec_module)
-     14/9    0.010    0.001    0.022    0.002 {built-in method _imp.exec_dynamic}
-       26    0.000    0.000    0.020    0.001 <frozen importlib._bootstrap>:806(module_from_spec)
-       14    0.000    0.000    0.020    0.001 <frozen importlib._bootstrap_external>:1287(create_module)
-       14    0.020    0.001    0.020    0.001 {built-in method _imp.create_dynamic}
-        1    0.019    0.019    0.019    0.019 {method 'commit' of 'pyodbc.Connection' objects}
-        1    0.000    0.000    0.013    0.013 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/parquet.py:51(get_engine)
-        1    0.000    0.000    0.013    0.013 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/parquet.py:162(__init__)
-        1    0.013    0.013    0.013    0.013 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:1420(read)
-        1    0.000    0.000    0.012    0.012 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/__init__.py:1(<module>)
-        1    0.000    0.000    0.011    0.011 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:1(<module>)
+        1    0.000    0.000    0.701    0.701 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/load/load.py:66(insert_data_from_df)
+       47    0.662    0.014    0.662    0.014 {method 'execute' of 'pyodbc.Cursor' objects}
+        1    0.000    0.000    0.427    0.427 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/load/load.py:31(connect_to_db)
+        1    0.425    0.425    0.426    0.426 {built-in method pyodbc.connect}
+        1    0.014    0.014    0.014    0.014 {method 'commit' of 'pyodbc.Connection' objects}
         1    0.011    0.011    0.011    0.011 {method 'close' of 'pyodbc.Cursor' objects}
-        1    0.000    0.000    0.008    0.008 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/fs.py:1(<module>)
-       39    0.000    0.000    0.005    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/frame.py:1505(iterrows)
-       38    0.000    0.000    0.004    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/series.py:389(__init__)
-       12    0.000    0.000    0.003    0.000 <frozen importlib._bootstrap_external>:1062(get_code)
-        1    0.001    0.001    0.003    0.003 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:760(table_to_dataframe)
-       12    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1183(get_data)
-       39    0.000    0.000    0.002    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/construction.py:517(sanitize_array)
-        1    0.000    0.000    0.002    0.002 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:1(<module>)
-       12    0.002    0.000    0.002    0.000 {method 'read' of '_io.BufferedReader' objects}
-      152    0.000    0.000    0.002    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/series.py:1095(__getitem__)
-      152    0.000    0.000    0.001    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/series.py:1220(_get_value)
-        2    0.000    0.000    0.001    0.001 {built-in method builtins.__import__}
+       48    0.000    0.000    0.007    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/frame.py:1505(iterrows)
+       62    0.000    0.000    0.006    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1660(_log)
+       47    0.000    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1517(debug)
+       47    0.001    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/series.py:389(__init__)
+       62    0.000    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1686(handle)
+       62    0.000    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1746(callHandlers)
+      124    0.000    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1011(handle)
+      124    0.000    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1148(emit)
+       48    0.000    0.000    0.003    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/construction.py:517(sanitize_array)
+      124    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:988(format)
+      124    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:690(format)
+       48    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1157(maybe_infer_to_datetimelike)
+        1    0.000    0.000    0.002    0.002 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/load/load.py:54(read_parquet)
+       62    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1266(emit)
+        1    0.000    0.000    0.002    0.002 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parquet.py:498(read_parquet)
+        1    0.000    0.000    0.002    0.002 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parquet.py:239(read)
+      470    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/series.py:1095(__getitem__)
+      124    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1137(flush)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/__init__.py:71(search_function)
+        1    0.000    0.000    0.001    0.001 {built-in method builtins.__import__}
+        2    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:1349(_find_and_load)
+      124    0.001    0.000    0.001    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:911(_load_unlocked)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:989(exec_module)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:1062(get_code)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:1183(get_data)
+        1    0.001    0.001    0.001    0.001 {method 'read' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/parquet/core.py:1776(read_table)
        15    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1529(info)
-       29    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:1240(_find_spec)
-       15    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1660(_log)
-       39    0.001    0.000    0.001    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1157(maybe_infer_to_datetimelike)
-      152    0.001    0.000    0.001    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:3777(get_loc)
-       29    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1520(find_spec)
-       29    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1491(_get_spec)
-        8    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:1390(_handle_fromlist)
-       15    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1686(handle)
-       15    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1746(callHandlers)
-       43    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1593(find_spec)
-       30    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1011(handle)
-       12    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:751(_compile_bytecode)
-       12    0.001    0.000    0.001    0.000 {built-in method marshal.loads}
-       30    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1148(emit)
-        1    0.000    0.000    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:891(_deserialize_column_index)
-        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/__init__.py:1(<module>)
-        1    0.000    0.000    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/frame.py:12590(values)
-        1    0.000    0.000    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:1633(as_array)
-        1    0.000    0.000    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:475(__new__)
-        1    0.000    0.000    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:1707(_interleave)
-        1    0.000    0.000    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2244(get_values)
-        1    0.000    0.000    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:674(astype)
-        1    0.001    0.001    0.001    0.001 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:447(astype)
-       15    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1266(emit)
-       30    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:684(_reconstruct_block)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/api.py:39(make_block)
-        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:726(__call__)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1137(flush)
-        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/collections/__init__.py:355(namedtuple)
-     2391    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
-       96    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:140(_path_stat)
-  825/665    0.000    0.000    0.000    0.000 {built-in method builtins.len}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:863(_create_)
-       97    0.000    0.000    0.000    0.000 {built-in method posix.stat}
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(__enter__)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:1863(from_array)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:1(<module>)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/__init__.py:71(search_function)
-       30    0.000    0.000    0.000    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
-       12    0.000    0.000    0.000    0.000 {built-in method _io.open_code}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:1(<module>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:124(maybe_convert_platform)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/numpy/_core/numeric.py:300(full)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:6301(__setattr__)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:988(format)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:304(acquire)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2731(check_ndim)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:528(__new__)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:145(_get_option)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:690(format)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:924(_reconstruct_index)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:63(__init__)
-        4    0.000    0.000    0.000    0.000 {built-in method builtins.eval}
-        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/__init__.py:226(compile)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1645(makeRecord)
-       26    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:733(_init_module_attrs)
-        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/__init__.py:280(_compile)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:298(__init__)
-    58/47    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x105d78a50}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:1(<module>)
-       42    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2645(maybe_coerce_values)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:6236(__finalize__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:842(_engine)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:162(__enter__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:649(_simple_new)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:622(formatTime)
-       35    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isfile)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/parquet.py:85(_get_path_or_handle)
-       38    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:150(_path_is_mode_type)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py:137(__new__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:1135(_add_any_metadata)
-      174    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:126(_path_join)
-       21    0.000    0.000    0.000    0.000 <frozen abc>:117(__instancecheck__)
-       43    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/construction.py:481(ensure_wrapped_if_datetimelike)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:127(_get_single_key)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:124(setdefault)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2716(new_block)
-       21    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
-       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:254(__set_name__)
-       39    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:278(__init__)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/series.py:784(name)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:91(ensure_python_int)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:740(compile)
-      435    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
-    73/13    0.000    0.000    0.000    0.000 <frozen abc>:121(__subclasscheck__)
-    73/13    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
-       24    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:482(cache_from_source)
-       38    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:632(cached)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:664(get_handle)
-        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1644(_fill_cache)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/series.py:734(name)
-       30    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:807(_set_axis)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:325(_from_sequence)
-       26    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:611(_get_cached)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:329(_from_sequence_not_strict)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py:1(<module>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:823(_get_extension_dtypes)
-       26    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1588(_get_spec)
-        3    0.000    0.000    0.000    0.000 {built-in method posix.listdir}
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:426(_get_module_lock)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1611(findCaller)
-      152    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexing.py:2765(check_dict_or_set_indexers)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1562(__and__)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:635(_get_root)
-      152    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/series.py:831(_values)
-        9    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1544(_get_value)
-       90    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/generic.py:42(_instancecheck)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1596(pandas_dtype)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1571(validate_all_hashable)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:6284(__getattr__)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:420(__exit__)
-       41    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:74(__new__)
-       47    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1469(_path_importer_cache)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:390(__setitem__)
-       30    0.000    0.000    0.000    0.000 {built-in method time.strftime}
-        5    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:306(__init__)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/common.py:568(require_length_match)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:372(release)
-       26    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:802(spec_from_file_location)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:304(_get_filepath_or_buffer)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/compat/_optional.py:85(import_optional_dependency)
-       42    0.000    0.000    0.000    0.000 {built-in method numpy.empty}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:573(_code)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:969(parse)
-        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1456(_path_hooks)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:236(set_axis)
-       30    0.000    0.000    0.000    0.000 {built-in method time.localtime}
-       60    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:975(release)
-      152    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:2004(internal_values)
-       43    0.000    0.000    0.000    0.000 {built-in method builtins.all}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:149(LegacyVersion)
-       90    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/generic.py:37(_check)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:7688(maybe_extract_name)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:452(_parse_sub)
-       42    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2674(get_block_type)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:676(_translate_key)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:513(__prepare__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:2149(getLogger)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/base.py:549(find)
-       24    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:132(_path_split)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:674(formatMessage)
+      124    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:383(getMessage)
+       62    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1645(makeRecord)
+      470    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/series.py:1220(_get_value)
+       62    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:298(__init__)
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/parquet/core.py:1420(read)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/frame.py:12590(values)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:1633(as_array)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:1707(_interleave)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:760(table_to_dataframe)
+      124    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:622(formatTime)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2244(get_values)
+        1    0.000    0.000    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:674(astype)
+     4215    0.000    0.000    0.001    0.000 {built-in method builtins.isinstance}
+      124    0.001    0.000    0.001    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+        1    0.001    0.001    0.001    0.001 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:447(astype)
+       47    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:1863(from_array)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/numpy/_core/numeric.py:300(full)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:6301(__setattr__)
+      470    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:3777(get_loc)
+       62    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1611(findCaller)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/parquet/core.py:1276(__init__)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:145(_get_option)
+      470    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexing.py:2765(check_dict_or_set_indexers)
+       48    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:278(__init__)
+      124    0.000    0.000    0.000    0.000 {built-in method time.localtime}
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:6236(__finalize__)
+      124    0.000    0.000    0.000    0.000 {built-in method time.strftime}
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2716(new_block)
+      470    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/series.py:831(_values)
+      186    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:200(_is_internal_frame)
+       51    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2645(maybe_coerce_values)
+  765/570    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/series.py:784(name)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:127(_get_single_key)
+      124    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:674(formatMessage)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/series.py:734(name)
+       62    0.000    0.000    0.000    0.000 <frozen posixpath>:117(splitext)
+      124    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:462(format)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:807(_set_axis)
+      248    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:968(acquire)
+       62    0.000    0.000    0.000    0.000 <frozen posixpath>:169(basename)
+      470    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:2004(internal_values)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parquet.py:85(_get_path_or_handle)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:6284(__getattr__)
+      470    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/common.py:372(apply_if_callable)
+       50    0.000    0.000    0.000    0.000 {built-in method numpy.asarray}
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1571(validate_all_hashable)
+      124    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:668(usesTime)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:891(_deserialize_column_index)
+      124    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:455(_format)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:684(_reconstruct_block)
+      108    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/generic.py:42(_instancecheck)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:823(_get_extension_dtypes)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/api.py:39(make_block)
+       52    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/construction.py:481(ensure_wrapped_if_datetimelike)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1596(pandas_dtype)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/common.py:568(require_length_match)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:635(_get_root)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:664(get_handle)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:475(__new__)
+       51    0.000    0.000    0.000    0.000 {built-in method numpy.empty}
+      248    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:975(release)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parquet.py:51(get_engine)
+      124    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:447(usesTime)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:236(set_axis)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:7688(maybe_extract_name)
+       51    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2674(get_block_type)
+      108    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/generic.py:37(_check)
+       52    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:676(_translate_key)
+       62    0.000    0.000    0.000    0.000 <frozen genericpath>:133(_splitext)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1240(_find_spec)
+       62    0.000    0.000    0.000    0.000 {built-in method time.time}
+      186    0.000    0.000    0.000    0.000 <frozen posixpath>:52(normcase)
+       62    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:170(<lambda>)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:480(_call_with_frames_removed)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/base.py:549(find)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parquet.py:162(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/base.py:86(_validate_set_axis)
+      250    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
         1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:1(<module>)
-      211    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/base.py:86(_validate_set_axis)
-       39    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/construction.py:696(_sanitize_ndim)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/version/__init__.py:339(__init__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1377(getLogger)
-       54    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
-      156    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:909(__len__)
-       45    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:200(_is_internal_frame)
-       12    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:511(_compile_info)
-        2    0.000    0.000    0.000    0.000 <frozen abc>:105(__new__)
-      152    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/common.py:372(apply_if_callable)
-      164    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:1392(schema)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:462(format)
-       58    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:850(__setattr__)
-      372    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
-       29    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/_distutils_hack/__init__.py:103(find_spec)
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1202(path_stats)
-        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1685(path_hook_for_FileFinder)
-       39    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/__init__.py:34(using_copy_on_write)
-       49    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
-       15    0.000    0.000    0.000    0.000 <frozen posixpath>:117(splitext)
-      207    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
-       39    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/construction.py:735(_sanitize_str_dtypes)
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:666(_classify_pyc)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(__init__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:160(is_url)
-      119    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1226(__exit__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:512(_parse)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:445(cb)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:22(__init__)
-       15    0.000    0.000    0.000    0.000 <frozen posixpath>:169(basename)
-        6    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:967(_get_mixins_)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1580(construct_1d_object_array_from_listlike)
-       80    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/inference.py:334(is_hashable)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1128(find_spec)
-      213    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:491(_verbose_message)
-      144    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
-      119    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1222(__enter__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:374(urlparse)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:455(_format)
-       60    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:968(acquire)
-       24    0.000    0.000    0.000    0.000 {built-in method builtins.max}
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/construction.py:416(extract_array)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:617(_select_options)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2184(_sequence_to_dt64)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/base.py:378(interleaved_dtype)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:304(_simple_new)
-       36    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_unpack_uint32)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:668(usesTime)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:82(remove)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/__init__.py:299(loads)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/config.py:86(stop_monitor)
+       48    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/construction.py:696(_sanitize_ndim)
+      188    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/compat/_optional.py:85(import_optional_dependency)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:325(_from_sequence)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:329(_from_sequence_not_strict)
+      260    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+      192    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:909(__len__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1520(find_spec)
+       48    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/construction.py:735(_sanitize_str_dtypes)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1491(_get_spec)
+       48    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/__init__.py:34(using_copy_on_write)
+      270    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      205    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1593(find_spec)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/version/__init__.py:339(__init__)
+       98    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/inference.py:334(is_hashable)
+       62    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:129(getLevelName)
+       62    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py:1483(current_thread)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/construction.py:416(extract_array)
+      470    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        4    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+       62    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1790(isEnabledFor)
         1    0.000    0.000    0.000    0.000 {built-in method _io.open}
-       76    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1590(<genexpr>)
-       11    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1433(find_common_type)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:913(__init__)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:645(parent)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:248(stringify_path)
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:699(_validate_timestamp_pyc)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:982(find_spec)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/hashlib.py:152(__hash_new)
-      143    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/__init__.py:183(dumps)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:243(_optimize_charset)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:185(_path_abspath)
-       76    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:7593(ensure_index)
-        6    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1008(_find_data_type_)
-       83    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/decoder.py:332(decode)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:79(__init__)
-        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:935(_verify_integrity)
-        8    0.000    0.000    0.000    0.000 {method 'search' of 're.Pattern' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:273(__call__)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py:183(encode)
-        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1567(__init__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:515(get_compression_method)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2425(ensure_arraylike_for_datetimelike)
-      178    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
-       41    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:649(_get_deprecated_option)
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:383(getMessage)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:32(__arrow_ext_serialize__)
-       71    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
-       30    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:447(usesTime)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/flags.py:87(allows_duplicate_labels)
-       39    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/flags.py:51(__init__)
-        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.new}
-      178    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:452(urlsplit)
-       15    0.000    0.000    0.000    0.000 <frozen genericpath>:133(_splitext)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:83(__arrow_ext_serialize__)
-        3    0.000    0.000    0.000    0.000 <frozen zipimport>:64(__init__)
-      123    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:173(__exit__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:301(Version)
-        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_init}
-       29    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
-       48    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:134(<genexpr>)
-       43    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:67(_relax_case)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2428(maybe_convert_dtype)
-      152    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
-      124    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:170(<lambda>)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:180(_path_isabs)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/decoder.py:343(raw_decode)
-       39    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/construction.py:758(_maybe_repeat)
-       45    0.000    0.000    0.000    0.000 <frozen posixpath>:52(normcase)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py:205(iterencode)
-      128    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
-       62    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
-       70    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1331(is_ea_or_datetimelike_dtype)
-        5    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:490(_cmpkey)
-       60    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
-       90    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
-       41    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:643(_check_name_wrapper)
-        3    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2586(get_values)
-        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:164(_path_isdir)
-       29    0.000    0.000    0.000    0.000 {built-in method _imp.find_frozen}
-        3    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/base.py:82(shape)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:37(_compile)
-       11    0.000    0.000    0.000    0.000 {built-in method builtins.delattr}
-      152    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:6672(_maybe_cast_indexer)
-       30    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
-       32    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1790(isEnabledFor)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:131(close)
-       45    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:831(filter)
-       76    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:405(flags)
-        3    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1035(_find_new_)
-       31    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/__init__.py:43(normalize_encoding)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:339(_from_mgr)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:129(getLevelName)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:79(_is_private)
-       55    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:946(ParquetWriter)
+      186    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:831(filter)
+      316    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:124(maybe_convert_platform)
+       62    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py:1180(name)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:617(_select_options)
+      470    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:6672(_maybe_cast_indexer)
+       94    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1590(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/base.py:378(interleaved_dtype)
+      124    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(__enter__)
+      250    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:304(_get_filepath_or_buffer)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1433(find_common_type)
+       48    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/flags.py:51(__init__)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2586(get_values)
+        1    0.000    0.000    0.000    0.000 {built-in method _io.open_code}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:924(_reconstruct_index)
         3    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:73(import_module)
-        3    0.000    0.000    0.000    0.000 <frozen abc>:110(register)
-       15    0.000    0.000    0.000    0.000 {built-in method time.time}
-       11    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
-       39    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py:463(__iter__)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:386(_mk_bitmap)
-        1    0.000    0.000    0.000    0.000 {method 'cursor' of 'pyodbc.Connection' objects}
-        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:463(_lock_unlock_module)
-       32    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
-       80    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
-       11    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/base.py:238(construct_from_string)
-        3    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:188(_expand_user)
-       30    0.000    0.000    0.000    0.000 {built-in method _weakref._remove_dead_weakref}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:166(simplefilter)
-       15    0.000    0.000    0.000    0.000 <frozen posixpath>:41(_get_sep)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1163(is_float_dtype)
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:48(_new_module)
-       62    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py:1483(current_thread)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:1213(ParquetDataset)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:5170(_get_engine_target)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/fs.py:268(FSSpecHandler)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:59(_is_sunder)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/version/__init__.py:520(_cmpkey)
-        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:325(Future)
+       94    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:7593(ensure_index)
+       62    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:806(module_from_spec)
+       52    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/hashlib.py:152(__hash_new)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:751(_compile_bytecode)
+       62    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/flags.py:87(allows_duplicate_labels)
+      126    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
         1    0.000    0.000    0.000    0.000 <frozen genericpath>:39(isdir)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:1837(__init__)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:292(is_fsspec_url)
-       18    0.000    0.000    0.000    0.000 {built-in method sys.intern}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1392(np_find_common_type)
-       36    0.000    0.000    0.000    0.000 {built-in method from_bytes}
-       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:38(_is_descriptor)
-       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:785(__delattr__)
-        5    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:599(__init__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1497(__init__)
-        3    0.000    0.000    0.000    0.000 {built-in method _abc._abc_register}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1551(__or__)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2773(extract_pandas_array)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:1940(_block)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py:211(ParquetFile)
-        9    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/base.py:84(<genexpr>)
-        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1375(_gcd_import)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:957(_check_for_existing_members_)
-       56    0.000    0.000    0.000    0.000 <frozen _collections_abc>:435(__subclasshook__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py:46(_WorkItem)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1428(_fixupParents)
+       62    0.000    0.000    0.000    0.000 <frozen posixpath>:41(_get_sep)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/__init__.py:299(loads)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2184(_sequence_to_dt64)
+       50    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:649(_get_deprecated_option)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:304(acquire)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/range.py:137(__new__)
+        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/config.py:86(stop_monitor)
+      102    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:140(_path_stat)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/decoder.py:332(decode)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:733(_init_module_attrs)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:913(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       18    0.000    0.000    0.000    0.000 <frozen abc>:117(__instancecheck__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:273(__call__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:935(_verify_integrity)
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.new}
+       48    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/construction.py:758(_maybe_repeat)
+       48    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/range.py:463(__iter__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:842(_engine)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:632(cached)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:482(cache_from_source)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:160(is_url)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/decoder.py:343(raw_decode)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:611(_get_cached)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/__init__.py:43(normalize_encoding)
+       94    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:405(flags)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:374(urlparse)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:1135(_add_any_metadata)
+       18    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2428(maybe_convert_dtype)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1580(construct_1d_object_array_from_listlike)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:248(stringify_path)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/base.py:82(shape)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:162(__enter__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:131(close)
+       98    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:1837(__init__)
+       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/base.py:238(construct_from_string)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2731(check_ndim)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:126(_path_join)
+        3    0.000    0.000    0.000    0.000 {method 'search' of 're.Pattern' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:166(simplefilter)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:426(_get_module_lock)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:339(_from_mgr)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1588(_get_spec)
+        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:124(setdefault)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1392(np_find_common_type)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:73(import_module)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:304(_simple_new)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2425(ensure_arraylike_for_datetimelike)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1163(is_float_dtype)
+        1    0.000    0.000    0.000    0.000 {method 'cursor' of 'pyodbc.Connection' objects}
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/numpy/_core/multiarray.py:1089(copyto)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:132(_path_split)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:1940(_block)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/generic.py:363(attrs)
         2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:182(_add_filter)
-        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:804(get)
-        1    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:383(__init__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:880(_check_data_column_metadata_consistency)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:17(InfinityType)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1375(_is_dtype)
-       20    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:316(<genexpr>)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/generic.py:363(attrs)
-        2    0.000    0.000    0.000    0.000 {built-in method builtins.any}
-       15    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2514(_validate_dt64_dtype)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/util.py:138(_stringify_path)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2537(dtype_to_unit)
-       40    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:1089(copyto)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:2773(extract_pandas_array)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/version/__init__.py:520(_cmpkey)
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+        9    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/base.py:84(<genexpr>)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isfile)
+        5    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+       53    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/typing.py:2154(cast)
         1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:33(getregentry)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/weakref.py:367(__init__)
-       26    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:536(is_string_dtype)
-       12    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:261(get)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py:201(_simple_new)
-       13    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:48(_is_dunder)
-       18    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
-        5    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:937(<genexpr>)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:70(_is_internal_class)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/flags.py:55(allows_duplicate_labels)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:412(__init__)
-        4    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:216(_compile_charset)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py:121(ThreadPoolExecutor)
-       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py:1180(name)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/fs.py:73(__getattr__)
-       44    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/typing.py:2154(cast)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:319(asi8)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:158(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:649(_simple_new)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:666(_classify_pyc)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:188(_expand_user)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:420(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1375(_gcd_import)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/flags.py:55(allows_duplicate_labels)
+        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:804(get)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:150(_path_is_mode_type)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:880(_check_data_column_metadata_consistency)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:5170(_get_engine_target)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1202(path_stats)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:802(spec_from_file_location)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1375(_is_dtype)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2514(_validate_dt64_dtype)
+       47    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/series.py:1480(_clear_item_cache)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/_validators.py:450(check_dtype_backend)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:74(__new__)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_unpack_uint32)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:292(is_fsspec_url)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:372(release)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:319(asi8)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:937(<genexpr>)
         2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:482(__enter__)
-       12    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
-        1    0.000    0.000    0.000    0.000 <frozen os>:1087(__subclasshook__)
-       15    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:441(_parse_letter_version)
-        1    0.000    0.000    0.000    0.000 <frozen os>:680(__getitem__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/config.py:688(_warn_if_deprecated)
-       18    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/collections/__init__.py:429(<genexpr>)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py:1548(_register_atexit)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:21(ArrowPeriodType)
-       13    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:240(__next)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:449(_uniq)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:536(is_string_dtype)
+       20    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:1054(construct_from_string)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2537(dtype_to_unit)
         3    0.000    0.000    0.000    0.000 <frozen posixpath>:256(expanduser)
-       15    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2152(unit)
-       18    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1198(is_bool_dtype)
-        2    0.000    0.000    0.000    0.000 {built-in method fromkeys}
-       24    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1573(<genexpr>)
-       38    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/series.py:1480(_clear_item_cache)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/common.py:188(all_none)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:178(getwidth)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/range.py:201(_simple_new)
+        1    0.000    0.000    0.000    0.000 <frozen os>:680(__getitem__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/util.py:138(_stringify_path)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/config.py:688(_warn_if_deprecated)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:1305(construct_from_string)
         2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:234(_acquireLock)
-       15    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:292(_column_name_to_strings)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/util.py:134(_is_path_like)
-        8    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/version/__init__.py:348(<genexpr>)
-       13    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:831(construct_from_string)
-       22    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:93(_is_single_bit)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:1305(construct_from_string)
-        2    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:119(_coerce_args)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:231(__init__)
-        5    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
-       10    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
-       26    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:653(has_location)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/api.py:98(maybe_infer_ndim)
-        3    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/six.py:194(find_spec)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:572(condition)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/_config/__init__.py:55(using_pyarrow_string_dtype)
-       14    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x102534a50}
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2152(unit)
+        3    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/common.py:188(all_none)
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/version/__init__.py:348(<genexpr>)
+       15    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:292(_column_name_to_strings)
+       14    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
         1    0.000    0.000    0.000    0.000 <frozen codecs>:94(__new__)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:576(tz)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/inference.py:105(is_file_like)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:82(remove)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:699(_validate_timestamp_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1128(find_spec)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1198(is_bool_dtype)
+        8    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:576(tz)
+       16    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/pandas_compat.py:885(<genexpr>)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/api.py:98(maybe_infer_ndim)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:2228(construct_from_string)
+        9    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
         1    0.000    0.000    0.000    0.000 {method 'view' of 'numpy.ndarray' objects}
-       15    0.000    0.000    0.000    0.000 <frozen abc>:7(abstractmethod)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:62(ArrowIntervalType)
-       16    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/pandas_compat.py:885(<genexpr>)
-        7    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:816(__iter__)
-        5    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:1249(shape)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:503(__exit__)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:202(__get__)
-        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1129(__new__)
-       11    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1153(__init__)
-        9    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:551(dtype)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:591(_ensure_array)
-        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:104(_check_methods)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/util.py:100(_deprecate_api)
-        5    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1463(<genexpr>)
-        3    0.000    0.000    0.000    0.000 {built-in method numpy.datetime_data}
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2570(_validate_tz_from_dtype)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1434(_is_dtype_type)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:1054(construct_from_string)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:436(_get_literal_prefix)
-        7    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:820(<genexpr>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:342(construct_from_string)
-       14    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1276(__init__)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:112(__lt__)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:986(_find_data_repr_)
-        1    0.000    0.000    0.000    0.000 {built-in method posix.register_at_fork}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:1835(construct_from_string)
-       12    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:498(<lambda>)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:243(_releaseLock)
-       10    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:986(create_module)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:2228(construct_from_string)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/base.py:397(ensure_np_dtype)
-        8    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:266(mgr_locs)
-        1    0.000    0.000    0.000    0.000 <string>:2(__init__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:96(_FirstCompletedWaiter)
-       12    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:256(match)
+       12    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method fromkeys}
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:1249(shape)
         1    0.000    0.000    0.000    0.000 {built-in method _codecs.lookup}
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:718(dtype)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:503(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:982(find_spec)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:831(construct_from_string)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:572(condition)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1463(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:243(_releaseLock)
+        9    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:551(dtype)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:173(__exit__)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:134(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/base.py:397(ensure_np_dtype)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:445(cb)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/util.py:134(_is_path_like)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:456(_engine_type)
+        2    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/inference.py:105(is_file_like)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1331(is_ea_or_datetimelike_dtype)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:91(ensure_python_int)
         1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/config.py:10(obscure)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:1117(_maybe_memory_map)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/compat/_optional.py:74(get_version)
-        3    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py:999(__len__)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:831(_reset_identity)
-        2    0.000    0.000    0.000    0.000 {method 'translate' of 'bytearray' objects}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:491(_verbose_message)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:515(get_compression_method)
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:266(mgr_locs)
+        6    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1434(_is_dtype_type)
         1    0.000    0.000    0.000    0.000 <frozen os>:762(encode)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:456(_engine_type)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:569(Executor)
-        6    0.000    0.000    0.000    0.000 {method 'pop' of 'set' objects}
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1270(is_1d_only_ea_dtype)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:609(_dtype_to_subclass)
-        1    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
-        5    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1479(<genexpr>)
-        3    0.000    0.000    0.000    0.000 {built-in method sys._getframemodulename}
-       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1178(get_filename)
-        3    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1399(_get_dtype)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:130(__ge__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:49(NegativeInfinityType)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:467(_get_charset_prefix)
-        2    0.000    0.000    0.000    0.000 {built-in method builtins.min}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/string_.py:140(construct_from_string)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2310(_construct_from_dt64_naive)
-        1    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:74(_AsCompletedWaiter)
-       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:251(__init__)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1472(<genexpr>)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:293(tell)
-        3    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
-        3    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:828(__members__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:208(_checkLevel)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:111(_AllCompletedWaiter)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:185(_path_abspath)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:342(construct_from_string)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/_config/__init__.py:55(using_pyarrow_string_dtype)
+        3    0.000    0.000    0.000    0.000 {built-in method numpy.datetime_data}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:67(_relax_case)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/string_.py:140(construct_from_string)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2570(_validate_tz_from_dtype)
         8    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:59(_Waiter)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:456(__init__)
-       11    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1185(__init__)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:570(isstring)
-        6    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/version/__init__.py:470(_parse_letter_version)
-        2    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:540(<genexpr>)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:811(__init__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:104(_BaseVersion)
-        1    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/enum.py:1292(value)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1317(__init__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:953(fix_flags)
-        2    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
-        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1285(_sanity_check)
-        1    0.000    0.000    0.000    0.000 {method 'transpose' of 'numpy.ndarray' objects}
-        6    0.000    0.000    0.000    0.000 {built-in method _warnings._filters_mutated}
-        1    0.000    0.000    0.000    0.000 {built-in method _codecs.lookup_error}
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:83(groups)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/version/__init__.py:149(__lt__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1040(needs_i8_conversion)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/construction.py:688(_sanitize_non_ordered)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:103(tz_to_dtype)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:123(<lambda>)
+        1    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1226(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:79(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:609(_dtype_to_subclass)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:591(_ensure_array)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/range.py:999(__len__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/dtypes.py:1835(construct_from_string)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:119(_coerce_args)
+        1    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.find_frozen}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:180(_path_isabs)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/compat/_optional.py:74(get_version)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/blocks.py:718(dtype)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1399(_get_dtype)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1270(is_1d_only_ea_dtype)
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:643(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:2310(_construct_from_dt64_naive)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:48(_new_module)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:1117(_maybe_memory_map)
         7    0.000    0.000    0.000    0.000 {method 'isascii' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:529(is_string_or_object_np_dtype)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:121(classes)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:141(_AcquireFutures)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/_validators.py:450(check_dtype_backend)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2148(_creso)
-        3    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:5144(_values)
-        5    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:478(_parse_local_version)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py:115(BrokenThreadPool)
-        1    0.000    0.000    0.000    0.000 {built-in method atexit.register}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:168(__getitem__)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/_distutils_hack/__init__.py:110(<lambda>)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:176(append)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:241(is_single_block)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1222(__enter__)
+        3    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        6    0.000    0.000    0.000    0.000 {built-in method _warnings._filters_mutated}
         1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:22(IncrementalDecoder)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:45(Error)
-        2    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1040(needs_i8_conversion)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:831(_reset_identity)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1479(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1472(<genexpr>)
+        6    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/version/__init__.py:470(_parse_letter_version)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyarrow/parquet/core.py:1392(schema)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/warnings.py:456(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        2    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/version/__init__.py:149(__lt__)
+        1    0.000    0.000    0.000    0.000 {built-in method _weakref._remove_dead_weakref}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:645(parent)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:123(<lambda>)
+        2    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1285(_sanity_check)
+        1    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
+        1    0.000    0.000    0.000    0.000 {built-in method _codecs.lookup_error}
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1469(_path_importer_cache)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2148(_creso)
+        1    0.000    0.000    0.000    0.000 <string>:2(__init__)
         1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:18(IncrementalEncoder)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2063(_maybe_pin_freq)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:1165(_is_binary_mode)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_compiler.py:428(_get_iscased)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:164(__len__)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:77(__init__)
-        1    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:25(StreamWriter)
-        4    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/version/__init__.py:534(<lambda>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/range.py:216(_validate_dtype)
-        1    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1194(<lambda>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1474(<genexpr>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:246(items)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/re/_parser.py:113(__init__)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/common.py:192(<genexpr>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2043(freq)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py:974(dtype)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1776(getEffectiveLevel)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1369(disable)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:28(StreamReader)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:28(freq)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:75(subtype)
-        2    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/util/version/__init__.py:508(_parse_local_version)
-        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:108(_noop)
-        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:138(patch_pyarrow)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:49(CancelledError)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pyarrow/vendored/version.py:98(InvalidVersion)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/io/common.py:550(infer_compression)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:55(InvalidStateError)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:651(BrokenExecutor)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/numpy/_core/multiarray.py:678(result_type)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2063(_maybe_pin_freq)
+        1    0.000    0.000    0.000    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py:103(tz_to_dtype)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:540(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1776(getEffectiveLevel)
+        2    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+        2    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:121(classes)
+        1    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
         1    0.000    0.000    0.000    0.000 {built-in method _stat.S_ISDIR}
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:421(_checknetloc)
-        1    0.000    0.000    0.000    0.000 /Users/joshuasigma/Documents/Sigma/museum-dannyGs-codedungeon/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/extension_types.py:79(closed)
-        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/__init__.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:1194(<lambda>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/common.py:529(is_string_or_object_np_dtype)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/construction.py:688(_sanitize_non_ordered)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:241(is_single_block)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/version/__init__.py:534(<lambda>)
+        2    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:599(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:1165(_is_binary_mode)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1369(disable)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:5144(_values)
+        1    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/common.py:192(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:25(StreamWriter)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/encodings/utf_16_le.py:28(StreamReader)
+        1    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/dtypes/cast.py:1474(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py:2043(freq)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:550(infer_compression)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/util/version/__init__.py:508(_parse_local_version)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/internals/managers.py:246(items)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:412(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1153(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1178(get_filename)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py:974(dtype)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:653(has_location)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/core/indexes/range.py:216(_validate_dtype)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/urllib/parse.py:108(_noop)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/numpy/_core/multiarray.py:678(result_type)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:986(create_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:158(__init__)
 
 
