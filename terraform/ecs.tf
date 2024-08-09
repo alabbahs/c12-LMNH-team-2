@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "task" {
 
   container_definitions = jsonencode([{
     name      = "dashboard_container"
-    image     = "<your-docker-image>"  # Replace with your Docker image URI
+    image     = "129033205317.dkr.ecr.eu-west-2.amazonaws.com/c12_dashboard_team2:latest"  # Replace with your Docker image URI
     essential = true
     portMappings = [{
       containerPort = 80
@@ -23,7 +23,7 @@ resource "aws_ecs_task_definition" "task" {
       logDriver = "awslogs"
       options = {
         "awslogs-group"         = "/ecs/dashboard"
-        "awslogs-region"        = "us-west-2"  # Adjust as necessary
+        "awslogs-region"        = "eu-west-2"  # Adjust as necessary
         "awslogs-stream-prefix" = "ecs"
       }
     }
@@ -38,7 +38,7 @@ resource "aws_ecs_service" "service" {
   desired_count   = 1
   launch_type     = "FARGATE"
   network_configuration {
-    subnets         = ["<subnet-1>", "<subnet-2>"]  # Replace with your subnet IDs
+    subnets         = ["subnet-058f02e41ee6a5439", "subnet-0c459ebb007081668","subnet-0ff947058bbc1165d"]  # Replace with your subnet IDs
     security_groups = [aws_security_group.ecs_sg.id]
     assign_public_ip = true
   }
@@ -48,7 +48,7 @@ resource "aws_ecs_service" "service" {
 resource "aws_security_group" "ecs_sg" {
   name        = "ecs_sg"
   description = "Allow HTTP traffic"
-  vpc_id      = "<your-vpc-id>"  # Replace with your VPC ID
+  vpc_id      = "vpc-061c17c21b97427d8"  # Replace with your VPC ID
 
   ingress {
     from_port   = 80
