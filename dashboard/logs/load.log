@@ -1,0 +1,24 @@
+2024-08-08 11:54:46,074 - logs - INFO - ---> Logging initiated.
+2024-08-08 11:54:46,074 - logs - INFO - ---> Connecting to the database..
+2024-08-08 11:54:46,074 - logs - INFO - Attempting to connectng using the following credentials:
+2024-08-08 11:54:46,074 - logs - INFO - To Host: `c12-plants-db.c57vkec7dkkx.eu-west-2.rds.amazonaws.com`
+2024-08-08 11:54:46,074 - logs - INFO - On Port: `1433`
+2024-08-08 11:54:46,074 - logs - INFO - As user: `beta`
+2024-08-08 11:54:46,074 - logs - INFO - With password: `b***1`
+2024-08-08 11:54:46,074 - logs - INFO - Database name: `plants`
+2024-08-08 11:54:46,822 - logs - INFO - Database connection established successfully.
+2024-08-08 11:54:46,823 - logs - INFO - ---> Reading parquet..
+2024-08-08 11:54:46,823 - logs - INFO - Reading Parquet file from data/clean_data.parquet
+2024-08-08 11:54:46,929 - logs - ERROR - Failed to read Parquet file: [Errno 2] No such file or directory: 'data/clean_data.parquet'
+2024-08-08 11:58:37,306 - logs - INFO - ---> Logging initiated.
+2024-08-08 11:58:37,306 - logs - INFO - ---> Connecting to the database..
+2024-08-08 11:58:37,306 - logs - INFO - Attempting to connectng using the following credentials:
+2024-08-08 11:58:37,307 - logs - INFO - To Host: `c12-plants-db.c57vkec7dkkx.eu-west-2.rds.amazonaws.com`
+2024-08-08 11:58:37,307 - logs - INFO - On Port: `1433`
+2024-08-08 11:58:37,307 - logs - INFO - As user: `beta`
+2024-08-08 11:58:37,307 - logs - INFO - With password: `b***1`
+2024-08-08 11:58:37,307 - logs - INFO - Database name: `plants`
+2024-08-08 11:58:37,837 - logs - INFO - Database connection established successfully.
+2024-08-08 11:58:37,838 - logs - INFO - ---> Reading parquet..
+2024-08-08 11:58:37,838 - logs - INFO - Reading Parquet file from data/clean_data.parquet
+2024-08-08 11:58:37,867 - logs - ERROR - Failed to read Parquet file: [Errno 2] No such file or directory: 'data/clean_data.parquet'
