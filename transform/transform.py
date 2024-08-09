@@ -63,9 +63,15 @@ class Validator:
     def is_valid_uk_phone_number(phone_number: str) -> bool:
         """
         Define regex patterns for different valid UK phone number
-        formats and check the number fits
+        formats and check the number fits.
         """
         logger.info("Validating phone numbers..")
+        
+        # Check if the input is a string
+        if not isinstance(phone_number, str):
+            logger.error("Phone number must be a string")
+            return False
+        
         patterns = [
             r'^(?:\+44|0)7\d{9}$',                 # Mobile numbers, e.g., +447123456789 or 07123456789
             r'^(?:\+44|0)1\d{3}\s?\d{6}$',         # National numbers, e.g., +441234567890 or 01234567890
@@ -86,10 +92,14 @@ class Validator:
         Uses regex to check whether email conforms to basic email pattern or
         if it cannot be a valid email.
         """
-        logger.info("Validating emails..")
-        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-
-        if re.match(pattern, email):
+        logger.debug("Validating email..")
+        
+        if not isinstance(email, str):
+            logger.error("Email must be a string")
+            return False
+        
+        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$'
+        if re.match(pattern, email) and not re.search(r'\.\.', email):
             return True
         return False
     
